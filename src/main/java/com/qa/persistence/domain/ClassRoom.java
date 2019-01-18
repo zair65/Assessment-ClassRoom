@@ -19,13 +19,8 @@ public class ClassRoom {
 	private String TrainerName;
 	private String TraineeName;
 	private Long TraineeId;
-	
-	
 	private Long ClassRoomId ;
 	
-	
-	 @ManyToMany(cascade = CascadeType.ALL)
-	  private List<Trainee> Trainees;
 	
 	public ClassRoom() {
 

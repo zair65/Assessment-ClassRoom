@@ -1,9 +1,9 @@
-com\qa\persistence\domain\Account.class
-com\qa\persistence\repository\AccountMapRepository.class
-com\qa\rest\AccountEndpoint.class
-com\qa\business\service\AccountServiceImpl.class
-com\qa\business\service\AccountService.class
+com\qa\persistence\repository\ClassRoomDBRepository.class
+com\qa\persistence\domain\ClassRoom.class
+com\qa\rest\ClassRoomEndpoint.class
+com\qa\business\service\ClassRoomService.class
 com\qa\util\JSONUtil.class
-com\qa\persistence\repository\AccountRepository.class
-com\qa\persistence\repository\AccountDBRepository.class
+com\qa\persistence\repository\ClassRoomRepository.class
+com\qa\persistence\domain\Trainee.class
 com\qa\rest\JAXActivator.class
+com\qa\business\service\ClassRoomServiceImpl.class
