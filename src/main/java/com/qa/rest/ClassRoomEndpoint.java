@@ -11,47 +11,47 @@ import javax.ws.rs.Produces;
 
 import org.apache.log4j.Logger;
 
-import com.qa.business.service.AccountService;
+import com.qa.business.service.ClassRoomService;
 
-@Path("/account")
-public class AccountEndpoint {
+@Path("/trainees")
+public class ClassRoomEndpoint {
 	
 	@Inject
-	private AccountService service;
+	private ClassRoomService service;
 
 	@Path("/json")
 	@PUT
 	@Produces({ "application/json" })
-	public String UpdateAccount(@PathParam("id") String firstName, String LastName, Long Id) {
+	public String UpdateTrainee(@PathParam("id") String TraineeName, Long Id) {
 //		return service.retrieveAccounts(accNo);
-		return service.UpdateAccount(firstName, LastName, Id);
+		return service.UpdateTrainee(TraineeName, Id);
 	}
 
 	@Path("/json")
 	@POST
 	@Produces({ "application/json" })
-	public String AddAccount(@PathParam("id") String account){
+	public String AddTrainee(@PathParam("id") String TraineeName){
 //		return service.addAccount(account);
-		return service.AddAccount(account);
+		return service.AddTrainee(TraineeName);
 	}
 	
 	@Path("/json/{id}")
 	@DELETE
 	@Produces({ "application/json" })
-	public String DeleteAccount(@PathParam("id") Long Id) {
+	public String DeleteTrainee(@PathParam("id") Long Id) {
 //		return service.addAccount(account);
-		return service.DeleteAccount(Id);
+		return service.DeleteTrainee(Id);
 	}
 
 	@Path("/json")
 	@GET
 	@Produces({ "application/json" })
-	public String getAllAccounts()   {
+	public String getAllTrainee()   {
 //		return service.addAccount(account);
-		return service.getAllAccounts();
+		return service.getAllTrainee();
 	}
 
-		public void setService(AccountService service) {
+		public void setService(ClassRoomService service) {
 		this.service = service;
 	}
 
