@@ -21,7 +21,7 @@ import com.qa.util.JSONUtil;
 
 @Transactional(SUPPORTS)
 @Default
-public class AccountDBRepository implements AccountRepository {
+public class ClassRoomDBRepository implements AccountRepository {
 	
 	@PersistenceContext(unitName = "primary")
 	private EntityManager manager;

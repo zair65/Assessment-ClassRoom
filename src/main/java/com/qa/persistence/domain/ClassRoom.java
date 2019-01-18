@@ -17,6 +17,10 @@ public class ClassRoom {
 	@Id
 	private Long id;
 	private String TrainerName;
+	private String TraineeName;
+	private Long TraineeId;
+	
+	
 	private Long ClassRoomId ;
 	
 	
@@ -27,9 +31,12 @@ public class ClassRoom {
 
 	}
 	
-	public ClassRoom (String TrainerName, Long ClassRoomId) {
+	public ClassRoom (String TrainerName, String TraineeName,Long TraineeId, Long ClassRoomId) {
 		this.TrainerName = TrainerName;
 		this.ClassRoomId = ClassRoomId;
+		this.TraineeName = TraineeName;
+		this.TraineeId = TraineeId;
+	
 	}
 
 	public String getTrainerName() {
@@ -40,6 +47,24 @@ public class ClassRoom {
 		this.TrainerName = TrainerName;
 	}
 
+	public String getTraineeName(String TraineeName) {
+		return TrainerName;
+	}
+
+	public void setTraineeName(String TraineeName) {
+		this.TraineeName = TraineeName;
+	}
+	
+	
+	public Long getTraineeId() {
+		return TraineeId;
+	}
+
+	public void setTraineeId(Long TraineeId) {
+		this.TraineeId = TraineeId;
+	}
+	
+	
 	public Long getClassRoomId() {
 		return ClassRoomId;
 	}
