@@ -15,13 +15,13 @@ import javax.transaction.Transactional;
 
 import org.apache.log4j.Logger;
 
-import com.qa.business.service.AccountService;
-import com.qa.persistence.domain.Account;
+import com.qa.persistence.domain.ClassRoom;
+import com.qa.persistence.domain.Trainee;
 import com.qa.util.JSONUtil;
 
 @Transactional(SUPPORTS)
 @Default
-public class ClassRoomDBRepository implements AccountRepository {
+public class ClassRoomDBRepository implements ClassRoomRepository {
 	
 	@PersistenceContext(unitName = "primary")
 	private EntityManager manager;
@@ -29,37 +29,27 @@ public class ClassRoomDBRepository implements AccountRepository {
 	@Inject
 	private JSONUtil util;
 	
-	public void createAccounts() {
-		Account johnDoe = new Account("John","Doe","1234");
-		Account janeDoe = new Account("Jane","Doe","1235");
-		Account jimTaylor = new Account("Jim","Taylor","1236");
-
-		manager.persist(util.getJSONForObject(johnDoe));
-		manager.persist(util.getJSONForObject(janeDoe));
-		manager.persist(util.getJSONForObject(jimTaylor));
-	}
-
 	
 	@Override
-	public String getAllAccounts() {
+	public String getAllTrainee() {
 		Query query = manager.createQuery("Select a FROM Account a");
-		Collection<Account> result = (Collection<Account>) query.getResultList();
+		Collection<ClassRoom> result = (Collection<ClassRoom>) query.getResultList();
 		return util.getJSONForObject(result);
 	}
-
+	
 	@Override
 	@Transactional(REQUIRED)
-	public String AddAccount(String account) {
-		Account anAccount = util.getObjectForJSON(account, Account.class);
-		manager.persist(anAccount);
-		return "{\"message\": \"account has been sucessfully added\"}";
+	public String AddTrainee(String Trainees) {
+		ClassRoom aTrainee = util.getObjectForJSON(Trainees, ClassRoom.class);
+		manager.persist(aTrainee);
+		return "{\"message\": \"Trainee has been sucessfully added\"}";
 	}
 
 
 	@Override
 	@Transactional(REQUIRED)
-	public String DeleteAccount(Long id) {
-		Account accountInDB = findAccount(id);
+	public String DeleteTrainee(Long id) {
+		ClassRoom accountInDB = findAccount(id);
 		if (accountInDB != null) {
 			manager.remove(accountInDB);
 			return "{\"message\": \"account sucessfully deleted\"}";
@@ -70,17 +60,17 @@ public class ClassRoomDBRepository implements AccountRepository {
 	
 	@Override
 	@Transactional(REQUIRED)
-	public String UpdateAccount(String firstName, String LastName,Long Id) {
-		Account changeAccount=findAccount(Id);
-				changeAccount.setFirstName(firstName); 
-				changeAccount.setLastName(LastName);
-				return LastName;
-	
+	public String UpdateTrainee(String TraineeName,Long Id) {
+		ClassRoom changeTrainee=findAccount(Id);
+				changeTrainee.setTraineeName(TraineeName); 
+				changeTrainee.setTraineeId(Id);
+				
+				return "{\"message\": \"Trainee has been sucessfully updated\"}";
 	}
 
 	
-	private Account findAccount(Long id) {
-		return manager.find(Account.class, id);
+	private ClassRoom findAccount(Long id) {
+		return manager.find(ClassRoom.class, id);
 	}
 	
 	public void setManager(EntityManager manager) {
@@ -91,8 +81,8 @@ public class ClassRoomDBRepository implements AccountRepository {
 		this.util = util;
 	}
 
-
 	
+
 
 
 }

@@ -1,18 +1,18 @@
 package com.qa.business.service;
 
-import java.util.HashMap;
+
 
 import javax.inject.Inject;
 
 import com.google.gson.Gson;
-import com.qa.persistence.domain.Account;
-import com.qa.persistence.repository.AccountRepository;
+import com.qa.persistence.domain.ClassRoom;
+import com.qa.persistence.repository.ClassRoomRepository;
 import com.qa.util.JSONUtil;
 
-public class AccountServiceImpl implements AccountService {
+public class ClassRoomServiceImpl implements ClassRoomService {
 	
 	@Inject 
-	private AccountRepository repo; 
+	private ClassRoomRepository repo; 
 	private JSONUtil util; 
 	
 //	Gson gson = new Gson();
@@ -34,35 +34,36 @@ public class AccountServiceImpl implements AccountService {
 		
 	
 	@Override
-	public String getAllAccounts() {
+	public String getAllTrainee() {
 //		return gson.toJson(account);
-		return repo.getAllAccounts();
+		return repo.getAllTrainee();
 	}
 		
 	
 	@Override
-	public String AddAccount(String account) {
+	public String AddTrainee(String Trainees) {
 		// TODO Auto-generated method stub
 		
-		if(util.getObjectForJSON(account, Account.class).getAccountNumber().equals("9999"))  { 
-			return "{'message':'Account has been blocked'}";
-		}   else { 
-			return repo.AddAccount(account); 
-		}
+			return repo.AddTrainee(Trainees); 
 		
 	}
 
 	@Override
-	public String DeleteAccount(Long Id) {
+	public String DeleteTrainee(Long Id) {
 		// TODO Auto-generated method stub
-		return repo.DeleteAccount(Id);
+		return repo.DeleteTrainee(Id);
 	}
-	
+
+
+
 	@Override
-	public String UpdateAccount(String firstName, String LastName, Long Id) {
+	public String UpdateTrainee(String TraineeName, Long Id) {
 		// TODO Auto-generated method stub
-		return repo.UpdateAccount(firstName,LastName,Id);
+		 return repo.UpdateTrainee(TraineeName,Id);
 	}
+
+
+
 
 	
 }

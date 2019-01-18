@@ -2,10 +2,10 @@ package com.qa.persistence.repository;
 
 public interface ClassRoomRepository {
 
-	String AddAccount(String account);
-	String DeleteAccount(Long Id);
-	String UpdateAccount(String firstName, String LastName, Long Id);
-	String getAllAccounts();
+	String AddTrainee(String Trainee);
+	String DeleteTrainee(Long Id);
+	String UpdateTrainee(String TraineeName, Long Id);
+	String getAllTrainee();
 
 
 }
