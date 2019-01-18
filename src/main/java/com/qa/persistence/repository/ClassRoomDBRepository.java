@@ -38,8 +38,8 @@ public class ClassRoomDBRepository implements ClassRoomRepository {
 	
 	@Override
 	@Transactional(REQUIRED)
-	public String AddTrainee(String Trainees) {
-		ClassRoom aTrainee = util.getObjectForJSON(Trainees, ClassRoom.class);
+	public String AddTrainee(String TraineeName) {
+		ClassRoom aTrainee = util.getObjectForJSON(TraineeName, ClassRoom.class);
 		manager.persist(aTrainee);
 		return "{\"message\": \"Trainee has been sucessfully added\"}";
 	}

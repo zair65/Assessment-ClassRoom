@@ -30,9 +30,9 @@ public class ClassRoomEndpoint {
 	@Path("/json")
 	@POST
 	@Produces({ "application/json" })
-	public String AddTrainee(@PathParam("id") String TraineeStudents){
+	public String AddTrainee(@PathParam("id") String TraineeName){
 //		return service.addAccount(account);
-		return service.AddTrainee(TraineeStudents);
+		return service.AddTrainee(TraineeName);
 	}
 	
 	@Path("/json/{id}")
