@@ -11,13 +11,13 @@ import javax.ws.rs.Produces;
 
 import org.apache.log4j.Logger;
 
-import com.qa.business.service.ClassRoomService;
+import com.qa.business.service.TraineeService;
 
-@Path("/trainees")
-public class ClassRoomEndpoint {
+@Path("/TraineeStudents")
+public class TraineeEndpoint {
 	
 	@Inject
-	private ClassRoomService service;
+	private TraineeService service;
 
 	@Path("/json")
 	@PUT
@@ -51,7 +51,7 @@ public class ClassRoomEndpoint {
 		return service.getAllTrainee();
 	}
 
-		public void setService(ClassRoomService service) {
+		public void setService(TraineeService service) {
 		this.service = service;
 	}
 

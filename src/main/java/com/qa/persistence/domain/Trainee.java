@@ -29,7 +29,7 @@ public class Trainee{
 		return TraineeName;
 	}
 
-	public void setTrainerName(String TrainerName) {
+	public void setTraineeName(String TrainerName) {
 		this.TraineeName = TraineeName;
 	}
 
@@ -41,6 +41,18 @@ public class Trainee{
 		this.ClassRoomId = ClassRoomId;
 	}
 
+	
+	public Long getTraineeId() {
+		return TraineeId;
+	}
+
+	public void setTraineeId(Long TraineeId) {
+		this.TraineeId = TraineeId;
+	}
+	
+	
+	
+	
 	
 	public Long getId() {
 		return id;

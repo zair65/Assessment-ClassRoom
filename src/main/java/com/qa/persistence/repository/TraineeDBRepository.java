@@ -15,12 +15,12 @@ import javax.transaction.Transactional;
 
 import org.apache.log4j.Logger;
 
-import com.qa.persistence.domain.ClassRoom;
+import com.qa.persistence.domain.Trainee;
 import com.qa.util.JSONUtil;
 
 @Transactional(SUPPORTS)
 @Default
-public class ClassRoomDBRepository implements ClassRoomRepository {
+public class TraineeDBRepository implements TraineeRepository {
 	
 	@PersistenceContext(unitName = "primary")
 	private EntityManager manager;
@@ -32,15 +32,15 @@ public class ClassRoomDBRepository implements ClassRoomRepository {
 	@Override
 	public String getAllTrainee() {
 		Query query = manager.createQuery("Select a FROM ClassRoom a");
-		Collection<ClassRoom> result = (Collection<ClassRoom>) query.getResultList();
+		Collection<Trainee> result = (Collection<Trainee>) query.getResultList();
 		return util.getJSONForObject(result);
 	}
 	
 	@Override
 	@Transactional(REQUIRED)
-	public String AddTrainee(String Trainees) {
-		ClassRoom aTrainee = util.getObjectForJSON(Trainees, ClassRoom.class);
-		manager.persist(aTrainee);
+	public String AddTrainee(String TraineeStudents) {
+		Trainee bTrainee = util.getObjectForJSON(TraineeStudents, Trainee.class);
+		manager.persist(bTrainee);
 		return "{\"message\": \"Trainee has been sucessfully added\"}";
 	}
 
@@ -48,7 +48,7 @@ public class ClassRoomDBRepository implements ClassRoomRepository {
 	@Override
 	@Transactional(REQUIRED)
 	public String DeleteTrainee(Long id) {
-		ClassRoom accountInDB = findAccount(id);
+		Trainee accountInDB = findAccount(id);
 		if (accountInDB != null) {
 			manager.remove(accountInDB);
 			return "{\"message\": \"Trainee sucessfully deleted\"}";
@@ -60,7 +60,7 @@ public class ClassRoomDBRepository implements ClassRoomRepository {
 	@Override
 	@Transactional(REQUIRED)
 	public String UpdateTrainee(String TraineeName,Long Id) {
-		ClassRoom changeTrainee=findAccount(Id);
+		Trainee changeTrainee=findAccount(Id);
 				changeTrainee.setTraineeName(TraineeName); 
 				changeTrainee.setTraineeId(Id);
 				
@@ -68,8 +68,8 @@ public class ClassRoomDBRepository implements ClassRoomRepository {
 	}
 
 	
-	private ClassRoom findAccount(Long id) {
-		return manager.find(ClassRoom.class, id);
+	private Trainee findAccount(Long id) {
+		return manager.find(Trainee.class, id);
 	}
 	
 	public void setManager(EntityManager manager) {
