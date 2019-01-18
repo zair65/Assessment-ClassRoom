@@ -34,7 +34,7 @@ import com.qa.util.JSONUtil;
 		@Override
 		public String getAllTrainee() {
 			// TODO Auto-generated method stub
-			Query query = manager.createQuery("Select a From Account a");
+			Query query = manager.createQuery("Select a FROM ClassRoom a");
 			Collection<ClassRoom> result = (Collection<ClassRoom>) query.getResultList();
 			return util.getJSONForObject(result);
 		}
@@ -71,8 +71,8 @@ import com.qa.util.JSONUtil;
 		}
 
 		
-		private ClassRoom findTrainee(Long TraineeId) {
-			return manager.find(ClassRoom.class, TraineeId);
+		private ClassRoom findTrainee(Long Id) {
+			return manager.find(ClassRoom.class, Id);
 		}
 		
 		public void setManager(EntityManager manager) {

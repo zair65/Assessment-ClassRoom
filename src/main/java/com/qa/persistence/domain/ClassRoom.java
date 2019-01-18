@@ -1,13 +1,11 @@
 package com.qa.persistence.domain;
 
-import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+
 
 @Entity
 public class ClassRoom {
@@ -42,7 +40,7 @@ public class ClassRoom {
 		this.TrainerName = TrainerName;
 	}
 
-	public String getTraineeName(String TraineeName) {
+	public String getTraineeName() {
 		return TrainerName;
 	}
 

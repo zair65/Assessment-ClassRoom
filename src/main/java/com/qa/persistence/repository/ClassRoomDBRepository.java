@@ -32,7 +32,7 @@ public class ClassRoomDBRepository implements ClassRoomRepository {
 	
 	@Override
 	public String getAllTrainee() {
-		Query query = manager.createQuery("Select a FROM Account a");
+		Query query = manager.createQuery("Select a FROM ClassRoom a");
 		Collection<ClassRoom> result = (Collection<ClassRoom>) query.getResultList();
 		return util.getJSONForObject(result);
 	}
@@ -52,9 +52,9 @@ public class ClassRoomDBRepository implements ClassRoomRepository {
 		ClassRoom accountInDB = findAccount(id);
 		if (accountInDB != null) {
 			manager.remove(accountInDB);
-			return "{\"message\": \"account sucessfully deleted\"}";
+			return "{\"message\": \"Trainee sucessfully deleted\"}";
 		}
-		return "{\"message\": \"account not found\"}";
+		return "{\"message\": \"Trainee not found\"}";
 	}
 	
 	

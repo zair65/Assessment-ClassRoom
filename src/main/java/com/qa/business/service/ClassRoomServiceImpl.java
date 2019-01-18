@@ -41,10 +41,10 @@ public class ClassRoomServiceImpl implements ClassRoomService {
 		
 	
 	@Override
-	public String AddTrainee(String Trainees) {
+	public String AddTrainee(String trainees) {
 		// TODO Auto-generated method stub
 		
-			return repo.AddTrainee(Trainees); 
+			return repo.AddTrainee(trainees); 
 		
 	}
 

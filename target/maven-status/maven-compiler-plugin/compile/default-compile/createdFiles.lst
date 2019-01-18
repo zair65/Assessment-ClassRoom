@@ -5,5 +5,6 @@ com\qa\business\service\ClassRoomService.class
 com\qa\util\JSONUtil.class
 com\qa\persistence\repository\ClassRoomRepository.class
 com\qa\persistence\domain\Trainee.class
+com\qa\persistence\repository\ClassRoomMapRepository.class
 com\qa\rest\JAXActivator.class
 com\qa\business\service\ClassRoomServiceImpl.class

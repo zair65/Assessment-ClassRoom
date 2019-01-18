@@ -13,7 +13,7 @@ import org.apache.log4j.Logger;
 
 import com.qa.business.service.ClassRoomService;
 
-@Path("/Trainees")
+@Path("/trainees")
 public class ClassRoomEndpoint {
 	
 	@Inject
@@ -30,9 +30,9 @@ public class ClassRoomEndpoint {
 	@Path("/json")
 	@POST
 	@Produces({ "application/json" })
-	public String AddTrainee(@PathParam("id") String Trainees){
+	public String AddTrainee(@PathParam("id") String trainees){
 //		return service.addAccount(account);
-		return service.AddTrainee(Trainees);
+		return service.AddTrainee(trainees);
 	}
 	
 	@Path("/json/{id}")
