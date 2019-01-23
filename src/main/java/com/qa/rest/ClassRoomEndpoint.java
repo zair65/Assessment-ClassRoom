@@ -12,19 +12,22 @@ import javax.ws.rs.Produces;
 import org.apache.log4j.Logger;
 
 import com.qa.business.service.ClassRoomService;
+import com.qa.business.service.GodsService;
 
 @Path("/trainees")
 public class ClassRoomEndpoint {
 	
 	@Inject
-	private ClassRoomService service;
+	private ClassRoomService aservice;
+	@Inject
+	private GodsService gService;
 
 	@Path("/json")
 	@PUT
 	@Produces({ "application/json" })
 	public String UpdateTrainee(@PathParam("id") String TraineeName, Long Id) {
 //		return service.retrieveAccounts(accNo);
-		return service.UpdateTrainee(TraineeName, Id);
+		return aservice.UpdateTrainee(TraineeName, Id);
 	}
 
 	@Path("/json")
@@ -32,7 +35,7 @@ public class ClassRoomEndpoint {
 	@Produces({ "application/json" })
 	public String AddTrainee(@PathParam("id") String TraineeName){
 //		return service.addAccount(account);
-		return service.AddTrainee(TraineeName);
+		return aservice.AddTrainee(TraineeName);
 	}
 	
 	@Path("/json/{id}")
@@ -40,7 +43,7 @@ public class ClassRoomEndpoint {
 	@Produces({ "application/json" })
 	public String DeleteTrainee(@PathParam("id") Long Id) {
 //		return service.addAccount(account);
-		return service.DeleteTrainee(Id);
+		return aservice.DeleteTrainee(Id);
 	}
 
 	@Path("/json")
@@ -48,11 +51,21 @@ public class ClassRoomEndpoint {
 	@Produces({ "application/json" })
 	public String getAllTrainee()   {
 //		return service.addAccount(account);
-		return service.getAllTrainee();
+		return aservice.getAllTrainee();
 	}
+	
+	@Path("/json")
+	@GET
+	@Produces({ "application/json" })
+	public String getGods()   {
+//		return service.addAccount(account);
+		return gService.getGods();
+	}
+	
+	
 
 		public void setService(ClassRoomService service) {
-		this.service = service;
+		this.aservice = service;
 	}
 
 }

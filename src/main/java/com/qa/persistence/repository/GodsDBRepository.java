@@ -27,7 +27,6 @@ public class GodsDBRepository implements GodsRepository {
 		return util.getJSONForObject(result);
 	}
 	
-
 	
 	public void setManager(EntityManager manager) {
 		this.manager = manager;
