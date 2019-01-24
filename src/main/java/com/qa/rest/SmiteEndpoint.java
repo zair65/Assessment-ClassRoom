@@ -11,31 +11,31 @@ import javax.ws.rs.Produces;
 
 import org.apache.log4j.Logger;
 
-import com.qa.business.service.ClassRoomService;
+import com.qa.business.service.AccountService;
 import com.qa.business.service.GodsService;
 
-@Path("/trainees")
-public class ClassRoomEndpoint {
+@Path("/SmitePath")
+public class SmiteEndpoint {
 	
 	@Inject
-	private ClassRoomService aservice;
+	private AccountService aservice;
 	@Inject
 	private GodsService gService;
 
 	@Path("/json")
 	@PUT
 	@Produces({ "application/json" })
-	public String UpdateTrainee(@PathParam("id") String TraineeName, Long Id) {
+	public String UpdateAccount(@PathParam("id") String UserName,String Password, Long Id) {
 //		return service.retrieveAccounts(accNo);
-		return aservice.UpdateTrainee(TraineeName, Id);
+		return aservice.UpdateAccount(UserName,Password, Id);
 	}
 
 	@Path("/json")
 	@POST
 	@Produces({ "application/json" })
-	public String AddTrainee(@PathParam("id") String TraineeName){
+	public String AddAccount(@PathParam("id") String UserName){
 //		return service.addAccount(account);
-		return aservice.AddTrainee(TraineeName);
+		return aservice.AddAccount(UserName);
 	}
 	
 	@Path("/json/{id}")
@@ -43,18 +43,18 @@ public class ClassRoomEndpoint {
 	@Produces({ "application/json" })
 	public String DeleteTrainee(@PathParam("id") Long Id) {
 //		return service.addAccount(account);
-		return aservice.DeleteTrainee(Id);
+		return aservice.DeleteAccount(Id);
 	}
 
 	@Path("/json")
 	@GET
 	@Produces({ "application/json" })
-	public String getAllTrainee()   {
+	public String getAllAccounts()   {
 //		return service.addAccount(account);
-		return aservice.getAllTrainee();
+		return aservice.getAllAccounts();
 	}
 	
-	@Path("/json")
+	@Path("/getGods")
 	@GET
 	@Produces({ "application/json" })
 	public String getGods()   {
@@ -64,7 +64,7 @@ public class ClassRoomEndpoint {
 	
 	
 
-		public void setService(ClassRoomService service) {
+		public void setService(AccountService service) {
 		this.aservice = service;
 	}
 

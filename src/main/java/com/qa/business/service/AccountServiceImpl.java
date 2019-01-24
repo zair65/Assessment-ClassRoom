@@ -1,18 +1,18 @@
 package com.qa.business.service;
 
-
+import java.util.HashMap;
 
 import javax.inject.Inject;
 
 import com.google.gson.Gson;
-import com.qa.persistence.domain.ClassRoom;
-import com.qa.persistence.repository.ClassRoomRepository;
+import com.qa.persistence.domain.Account;
+import com.qa.persistence.repository.AccountRepository;
 import com.qa.util.JSONUtil;
 
-public class ClassRoomServiceImpl implements ClassRoomService {
+public class AccountServiceImpl implements AccountService {
 	
 	@Inject 
-	private ClassRoomRepository repo; 
+	private AccountRepository repo; 
 	private JSONUtil util; 
 	
 //	Gson gson = new Gson();
@@ -34,36 +34,30 @@ public class ClassRoomServiceImpl implements ClassRoomService {
 		
 	
 	@Override
-	public String getAllTrainee() {
+	public String getAllAccounts() {
 //		return gson.toJson(account);
-		return repo.getAllTrainee();
+		return repo.getAllAccounts();
 	}
 		
 	
 	@Override
-	public String AddTrainee(String trainees) {
-		// TODO Auto-generated method stub
+	public String AddAccount(String account) {
+		// TODO Auto-generated method stub 
+			return repo.AddAccount(account); 
+		}
 		
-			return repo.AddTrainee(trainees); 
-		
-	}
 
 	@Override
-	public String DeleteTrainee(Long Id) {
+	public String DeleteAccount(Long Id) {
 		// TODO Auto-generated method stub
-		return repo.DeleteTrainee(Id);
+		return repo.DeleteAccount(Id);
 	}
-
-
-
+	
 	@Override
-	public String UpdateTrainee(String TraineeName, Long Id) {
+	public String UpdateAccount(String UserName, String Password, Long Id) {
 		// TODO Auto-generated method stub
-		 return repo.UpdateTrainee(TraineeName,Id);
+		return repo.UpdateAccount(UserName,Password,Id);
 	}
-
-
-
 
 	
 }

@@ -3,25 +3,26 @@ package com.qa.business.service;
 
 import javax.inject.Inject;
 
+import com.qa.persistence.repository.GodsDBRepository;
 import com.qa.persistence.repository.GodsRepository;
 
 public class GodsServiceImpl implements GodsService {
 	
 	@Inject
-	private WeaponRepository repo;
+	private GodsRepository repo;
 
-	@Override
-	public String getWeapons() {
-		return repo.getWeapons();		
-	}
 	
 	@Override
-	public String getWeapons(String type) {
-		return repo.getWeapons(type);
+	public String getGods() {
+		return repo.getGods();
 	}
 	
-	public void setRepo(WeaponRepository repo) {
+	public void setRepo(GodsRepository repo) {
 		this.repo = repo;
 	}
+
+	
+
+	
 
 }
