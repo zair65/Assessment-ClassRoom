@@ -5,3 +5,7 @@ INSERT INTO Trainee( TraineeName, TraineeId, ClassRoomId) VALUES ( 'Dick','3','1
 INSERT INTO GODS (God, GodType, Pantheon) VALUES ('Agni', 'Mage', 'Hindu')
 INSERT INTO GODS (God, GodType, Pantheon) VALUES ('Fenrir', 'Assassin', 'Norse')
 INSERT INTO GODS (God, GodType, Pantheon) VALUES ('Susano', 'Assassin', 'Japanese')
+INSERT INTO GODS (God, GodType, Pantheon) VALUES ('Kukulkan', 'Mage', 'Mayan')
+INSERT INTO GODS (God, GodType, Pantheon) VALUES ('Xbalanque', 'Hunter', 'Mayan')
+INSERT INTO GODS (God, GodType, Pantheon) VALUES ('Athena', 'Guardian', 'Greek')
+INSERT INTO GODS (God, GodType, Pantheon) VALUES ('Cu Chulain', 'Warrior', 'Celtic')
