@@ -13,7 +13,6 @@ public class Account{
 	private Long id;
 	private String UserName;
 	private String Password;
-	private long AccountID; 
 
 	
 	
@@ -21,18 +20,9 @@ public class Account{
 
 	}
 	
-	public Account (String UserName, String Password, Long AccountId) {
+	public Account (String UserName, String Password) {
 		this.UserName = UserName;
 		this.Password =Password;
-		 this.AccountID=AccountId; 
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
 	}
 
 	public String getUserName() {
@@ -51,13 +41,8 @@ public class Account{
 		Password = password;
 	}
 
-	public long getAccountID() {
-		return AccountID;
-	}
 
-	public void setAccountID(long accountID) {
-		AccountID = accountID;
-	}
+	
 	
 }
 

@@ -22,31 +22,30 @@ public class SmiteEndpoint {
 	@Inject
 	private GodsService gService;
 
-	@Path("/json")
+	@Path("/UpdateAccount/{id}")
 	@PUT
 	@Produces({ "application/json" })
-	public String UpdateAccount(@PathParam("id") String UserName,String Password, Long Id) {
+	public String UpdateAccount(@PathParam("id") Long id,String account) {
 //		return service.retrieveAccounts(accNo);
-		return aservice.UpdateAccount(UserName,Password, Id);
-	}
+		return aservice.UpdateAccount(id,account);}
 
-	@Path("/json")
+	@Path("/AddAccount")
 	@POST
 	@Produces({ "application/json" })
-	public String AddAccount(@PathParam("id") String UserName){
+	public String AddAccount(String account){
 //		return service.addAccount(account);
-		return aservice.AddAccount(UserName);
+		return aservice.AddAccount(account);
 	}
 	
 	@Path("/json/{id}")
 	@DELETE
 	@Produces({ "application/json" })
-	public String DeleteTrainee(@PathParam("id") Long Id) {
+	public String DeleteAccount(@PathParam("id") Long id) {
 //		return service.addAccount(account);
-		return aservice.DeleteAccount(Id);
+		return aservice.DeleteAccount(id);
 	}
 
-	@Path("/json")
+	@Path("/getAllAccounts")
 	@GET
 	@Produces({ "application/json" })
 	public String getAllAccounts()   {

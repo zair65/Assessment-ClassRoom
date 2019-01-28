@@ -1,6 +1,6 @@
-INSERT INTO Trainee (TraineeName, TraineeId, ClassRoomId) VALUES ( 'Jason','1','1')
-INSERT INTO Trainee (TraineeName, TraineeId, ClassRoomId) VALUES ( 'Jack','2','1')
-INSERT INTO Trainee( TraineeName, TraineeId, ClassRoomId) VALUES ( 'Dick','3','1')
+INSERT INTO Account (UserName, Password) VALUES ( 'Mark','Whatastory')
+INSERT INTO Account (UserName, Password) VALUES ( 'Tommy','WhyLisa')
+INSERT INTO Account (UserName, Password) VALUES ( 'Denny','wheresmyfmoney')
 
 INSERT INTO GODS (God, GodType, Pantheon) VALUES ('Agni', 'Mage', 'Hindu')
 INSERT INTO GODS (God, GodType, Pantheon) VALUES ('Fenrir', 'Assassin', 'Norse')

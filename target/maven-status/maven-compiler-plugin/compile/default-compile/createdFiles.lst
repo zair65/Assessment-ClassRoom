@@ -3,7 +3,6 @@ com\qa\rest\SmiteEndpoint.class
 com\qa\persistence\repository\GodsRepository.class
 com\qa\persistence\domain\Gods.class
 com\qa\persistence\domain\Account.class
-com\qa\persistence\repository\AccountMapRepository.class
 com\qa\business\service\AccountServiceImpl.class
 com\qa\business\service\AccountService.class
 com\qa\util\JSONUtil.class

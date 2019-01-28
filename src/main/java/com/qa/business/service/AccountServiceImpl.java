@@ -54,9 +54,9 @@ public class AccountServiceImpl implements AccountService {
 	}
 	
 	@Override
-	public String UpdateAccount(String UserName, String Password, Long Id) {
+	public String UpdateAccount(Long id,String account) {
 		// TODO Auto-generated method stub
-		return repo.UpdateAccount(UserName,Password,Id);
+		return repo.UpdateAccount(id,account);
 	}
 
 	

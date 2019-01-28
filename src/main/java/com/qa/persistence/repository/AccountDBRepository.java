@@ -61,13 +61,15 @@ public class AccountDBRepository implements AccountRepository {
 	
 	@Override
 	@Transactional(REQUIRED)
-	public String UpdateAccount(String UserName, String Password,Long Id) {
-		Account changeAccount=findAccount(Id);
-				changeAccount.setUserName(UserName); 
-				changeAccount.setPassword(Password);
-				
-				return "{\"message\": \"account sucessfully updated\"}";
-	
+	public String UpdateAccount(Long id,String account) {
+		
+		Account accountInDB = findAccount(id);
+		if (accountInDB != null) {
+			Account changes = util.getObjectForJSON(account, Account.class);
+			accountInDB.setUserName(changes.getUserName());
+			accountInDB.setPassword(changes.getPassword());
+		}
+		return "{\"message\": \"account has been sucessfully amended\"}";
 	}
 
 	
