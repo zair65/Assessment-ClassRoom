@@ -1,6 +1,6 @@
-INSERT INTO Account (UserName, Password) VALUES ( 'Mark','Whatastory')
-INSERT INTO Account (UserName, Password) VALUES ( 'Tommy','WhyLisa')
-INSERT INTO Account (UserName, Password) VALUES ( 'Denny','wheresmyfmoney')
+INSERT INTO Account (UserName, Password, Email) VALUES ( 'Mark','Whatastory', 'Mark@gmail.com')
+INSERT INTO Account (UserName, Password, Email) VALUES ( 'Tommy','WhyLisa','Tommy@gmail.com')
+INSERT INTO Account (UserName, Password, Email) VALUES ( 'Denny','wheresmyfmoney','Denny@gmail.com')
 
 INSERT INTO GODS (God, GodType, Pantheon) VALUES ('Agni', 'Mage', 'Hindu')
 INSERT INTO GODS (God, GodType, Pantheon) VALUES ('Fenrir', 'Assassin', 'Norse')

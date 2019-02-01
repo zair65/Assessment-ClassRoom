@@ -13,6 +13,7 @@ public class Account{
 	private Long id;
 	private String UserName;
 	private String Password;
+	private String Email; 
 
 	
 	
@@ -20,9 +21,10 @@ public class Account{
 
 	}
 	
-	public Account (String UserName, String Password) {
+	public Account (String UserName, String Password, String Email) {
 		this.UserName = UserName;
 		this.Password =Password;
+		this.Email=Email; 
 	}
 
 	public String getUserName() {
@@ -41,6 +43,15 @@ public class Account{
 		Password = password;
 	}
 
+	public String getEmail() {
+		return Email;
+	}
+
+	public void setEmail(String email) {
+		Email = email;
+	}
+
+	
 
 	
 	

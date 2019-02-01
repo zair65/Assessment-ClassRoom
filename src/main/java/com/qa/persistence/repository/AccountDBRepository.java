@@ -68,6 +68,7 @@ public class AccountDBRepository implements AccountRepository {
 			Account changes = util.getObjectForJSON(account, Account.class);
 			accountInDB.setUserName(changes.getUserName());
 			accountInDB.setPassword(changes.getPassword());
+			accountInDB.setPassword(changes.getEmail());
 		}
 		return "{\"message\": \"account has been sucessfully amended\"}";
 	}
