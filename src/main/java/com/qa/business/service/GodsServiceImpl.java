@@ -17,6 +17,13 @@ public class GodsServiceImpl implements GodsService {
 		return repo.getGods();
 	}
 	
+	@Override
+	public String AddGod(String god) {
+		// TODO Auto-generated method stub 
+			return repo.AddGod(god); 
+		}
+	
+	
 	public void setRepo(GodsRepository repo) {
 		this.repo = repo;
 	}

@@ -61,6 +61,13 @@ public class SmiteEndpoint {
 		return gService.getGods();
 	}
 	
+	@Path("/AddGod")
+	@POST
+	@Produces({ "application/json" })
+	public String AddGod(String god){
+//		return service.addAccount(account);
+		return gService.AddGod(god);
+	}
 	
 
 		public void setService(AccountService service) {
