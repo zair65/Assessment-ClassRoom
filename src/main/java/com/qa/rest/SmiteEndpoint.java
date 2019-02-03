@@ -37,7 +37,7 @@ public class SmiteEndpoint {
 		return aservice.AddAccount(account);
 	}
 	
-	@Path("/json/{id}")
+	@Path("/DeleteAccount/{id}")
 	@DELETE
 	@Produces({ "application/json" })
 	public String DeleteAccount(@PathParam("id") Long id) {
@@ -61,7 +61,28 @@ public class SmiteEndpoint {
 		return gService.getGods();
 	}
 	
+	@Path("/AddGod")
+	@POST
+	@Produces({ "application/json" })
+	public String AddGod(String god){
+//		return service.addAccount(account);
+		return gService.AddGod(god);
+	}
 	
+	@Path("/DeleteGod/{id}")
+	@DELETE
+	@Produces({ "application/json" })
+	public String DeleteGod(@PathParam("id") Long id) {
+//		return service.addAccount(account);
+		return gService.DeleteGod(id);
+	}
+	
+	@Path("/UpdateGod/{id}")
+	@PUT
+	@Produces({ "application/json" })
+	public String UpdateGod(@PathParam("id") Long id,String god) {
+//		return service.retrieveAccounts(accNo);
+		return gService.UpdateGod(id,god);}
 
 		public void setService(AccountService service) {
 		this.aservice = service;
