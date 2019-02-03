@@ -28,6 +28,18 @@ public class GodsServiceImpl implements GodsService {
 		this.repo = repo;
 	}
 
+	@Override
+	public String DeleteGod(Long Id) {
+		// TODO Auto-generated method stub
+		return repo.DeleteGod(Id);
+	}
+	
+	@Override
+	public String UpdateGod(Long id,String god) {
+		// TODO Auto-generated method stub
+		return repo.UpdateGod(id,god);
+	}
+
 	
 
 	
